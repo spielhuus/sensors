@@ -4,16 +4,16 @@ Sketch for an Atmega328 and BME280
 
 ## Wiring
 
-| HopeRF RFM95 LoRa transceiver module |	ATmega8 Pin ||	   	HopeRF RFM95 LoRa transceiver module |	ATmega8 Pin |
-| ----- | ---- || ---- | ---- |
-| ANT |	- ||	   	GND |	- |
-| GND |	GND ||	   	DIO5 | 	- |
-| DIO3 |	- 	 ||  	RESET |	PD5 (11) |
-| DIO4 |	- 	  || 	NSS |	PB2 (16) |
-| 3.3V |	3.3V 	||   	SCK |	PB5 (19) |
-| DIO0 |	PD2 (4) || 	MOSI 7	PB3 (17) |
-| DIO1 |	PD3 (5) || 	MISO |	PB4 (18) |
-| DIO2 |	- 	  || 	GND |	- |
+| HopeRF RFM95 LoRa transceiver module |	ATmega8 Pin |   |	   	HopeRF RFM95 LoRa transceiver module |	ATmega8 Pin |
+| ----- | ---- | --- | ---- | ---- |
+| ANT |	- |   |	   	GND |	- |
+| GND |	GND |   |	   	DIO5 | 	- |
+| DIO3 |	- 	 |   |  	RESET |	PD5 (11) |
+| DIO4 |	- 	  |   | 	NSS |	PB2 (16) |
+| 3.3V |	3.3V 	|   |   	SCK |	PB5 (19) |
+| DIO0 |	PD2 (4) |   | 	MOSI 7	PB3 (17) |
+| DIO1 |	PD3 (5) |   | 	MISO |	PB4 (18) |
+| DIO2 |	- 	  |   | 	GND |	- |
 
 ## Installation
 
