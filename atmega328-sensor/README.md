@@ -8,6 +8,8 @@ The Board is using the ATmega328 processor, the Hope RFM96W Lora Module and the 
 
 ## BOM
 
+The ATmega328 microprocessor needs an arduino bootloader. To burn a bootloader to the chip see [1]
+
 <table>
 <tr><th style='width:640px'>Ref</th><th>Qnty</th><th>Value</th><th>Part</th><th>Datasheet</th><th>Description</th><th>Vendor</th></tr><tr><td>AE1</td><td>1</td><td>Antenna</td><td>Device:Antenna</td><td>~</td><td>Antenna symbol</td><td></td></tr><tr><td>C1, C2</td><td>2</td><td>100</td><td>Device:CP</td><td>~</td><td>Polarised capacitor</td><td></td></tr><tr><td>C3</td><td>1</td><td>22pf</td><td>Device:C</td><td>~</td><td>Unpolarized capacitor</td><td></td></tr><tr><td>C4</td><td>1</td><td>22pf </td><td>Device:C</td><td>~</td><td>Unpolarized capacitor</td><td></td></tr><tr><td>J1</td><td>1</td><td>Input</td><td>Connector:Conn_01x01_Female</td><td>~</td><td>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr><tr><td>J2</td><td>1</td><td>Gnd</td><td>Connector:Conn_01x01_Female</td><td>~</td><td>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr><tr><td>J3</td><td>1</td><td>Output</td><td>Connector:Conn_01x01_Female</td><td>~</td><td>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr><tr><td>J4</td><td>1</td><td>Conn_01x04</td><td>Connector_Generic:Conn_01x04</td><td>~</td><td>Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)</td><td></td></tr><tr><td>U1</td><td>1</td><td>L7805</td><td>Regulator_Linear:L7805</td><td>http://www.st.com/content/ccc/resource/technical/document/datasheet/41/4f/b3/b0/12/d4/47/88/CD00000444.pdf/files/CD00000444.pdf/jcr:content/translations/en.CD00000444.pdf</td><td>Positive 1.5A 35V Linear Regulator, Fixed Output 5V, TO-220/TO-263/TO-252</td><td></td></tr><tr><td>U2</td><td>1</td><td>ATmega328P-PU</td><td>MCU_Microchip_ATmega:ATmega328P-PU</td><td>http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega328_P%20AVR%20MCU%20with%20picoPower%20Technology%20Data%20Sheet%2040001984A.pdf</td><td>20MHz, 32kB Flash, 2kB SRAM, 1kB EEPROM, DIP-28</td><td></td></tr><tr><td>U3</td><td>1</td><td>RFM95W-868S2</td><td>RF_AM_FM:RFM95W-868S2</td><td>http://www.hoperf.com/upload/rf/RFM95_96_97_98W.pdf</td><td>Low power long range transceiver module, SPI and parallel interface, 868 MHz, spreading factor 6 to12, bandwith 7.8 to 500kHz, -111 to -148 dBm, SMD-16, DIP-16</td><td></td></tr><tr><td>Y1</td><td>1</td><td>Crystal</td><td>Device:Crystal</td><td>~</td><td>Two pin crystal</td><td></td></tr><!--TABLEROW-->
 </table>
@@ -47,11 +49,10 @@ Add the Libraries to you IDE:
   - Uncomment line: #define DISABLE_BEACONS
     Disable this feature. It is not needed and space is freed up.
 
-Edit the TTN keys in atmega328-sensor.ino.
-
 ## Installation
 
-Add the keys from TTN in the arduino sketch file and change the PIN-Mappings:
+Load the armega328-sensor.ino sketch from this repository into the arduino ide. 
+Edit the keys from TTN in the sketch and change the PIN-Mappings:
 
 ```
 const lmic_pinmap lmic_pins = {
@@ -61,6 +62,10 @@ const lmic_pinmap lmic_pins = {
   .dio = {2, 3, LMIC_UNUSED_PIN}, // assumes external jumpers [feather_lora_jumper]
 };
 ```
+
+Chage the Board to <Arduino Nano> and the processor to ATmega328. Connect the 
+FTDI adapter and upload the sketch. 
+
 ## Payload Format
 
 The Payload is encoded as byte array.
