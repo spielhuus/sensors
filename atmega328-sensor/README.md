@@ -58,6 +58,7 @@ const lmic_pinmap lmic_pins = {
 ## Datasheets
 
 - [ATmega328/P](http://ww1.microchip.com/downloads/en/devicedoc/atmel-42735-8-bit-avr-microcontroller-atmega328-328p_datasheet.pdf)
+- [Bosch BME280](https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME280_DS002.pdf)
 - [RFM95/96/97/98(W) - Low Power Long Range Transceiver Module](http://www.hoperf.com/upload/rf/RFM95_96_97_98W.pdf)
 
 ## Links
