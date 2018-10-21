@@ -31,5 +31,6 @@ const lmic_pinmap lmic_pins = {
 ## Links
 
 - [https://www.mobilefish.com/developer/lorawan/lorawan_quickguide_build_lora_node_rfm95_arduino_uno.html]()
-- [https://www.arduino.cc/en/Hacking/PinMapping](ATmega8-Arduino Pin Mapping)
-- [https://github.com/matthijskooijman/arduino-lmic](Arduino-LMIC library)
+- [ATmega8-Arduino Pin Mapping](https://www.arduino.cc/en/Hacking/PinMapping)
+- [Arduino-LMIC library](https://github.com/matthijskooijman/arduino-lmic)
+
