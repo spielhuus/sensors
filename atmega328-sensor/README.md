@@ -61,6 +61,36 @@ const lmic_pinmap lmic_pins = {
   .dio = {2, 3, LMIC_UNUSED_PIN}, // assumes external jumpers [feather_lora_jumper]
 };
 ```
+## Payload Format
+
+The Payload is encoded as byte array.
+
+| byte | content |
+| ---- | ------- |
+| 0..1 | temperature (*100) |
+| 2..3 | humidity (*100) |
+| 4..8 | barometric pressure |
+
+To decode the values add this code in the TTM Console as decoder under Paload Formats.
+
+```
+function Decoder(bytes, port) {
+  temp = ((bytes[0]) << 8)
+              + ((bytes[1]));
+  hum = ((bytes[2]) << 8)
+              + ((bytes[3]));
+  pres = ((bytes[4]) << 24)
+              + ((bytes[5]) << 16)
+              + ((bytes[6]) << 8)
+              + ((bytes[7]));
+
+  return {
+    pressure: ( pres / 100 ),
+    temperature: ( temp / 100 ),
+    humidity: ( hum / 100 )
+  };
+}
+```
 
 ## Datasheets
 
