@@ -101,7 +101,7 @@ function Decoder(bytes, port) {
 
 ## Links
 
-1. [1][Guide Building Lora Node]
+1. [Guide Building Lora Node][1]
 2. [ATmega8-Arduino Pin Mapping](https://www.arduino.cc/en/Hacking/PinMapping)
 3. [Arduino-LMIC library](https://github.com/matthijskooijman/arduino-lmic)
 
