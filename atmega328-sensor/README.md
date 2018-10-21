@@ -60,7 +60,7 @@ const lmic_pinmap lmic_pins = {
   .rxtx = LMIC_UNUSED_PIN,
   .rst = 5,                       // reset pin
   .dio = {2, 3, LMIC_UNUSED_PIN}, // assumes external jumpers [feather_lora_jumper]
-
+```
 
 ## Payload Format
 
