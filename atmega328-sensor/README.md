@@ -30,12 +30,14 @@ Add the Libraries to you IDE:
   - If you live in Europe, set: #define CFG_eu868 1
   - If you use a HopeRF RFM95 module, set: #define CFG_sx1276_radio 1
   - If you want logging in the serial monitor, set:
-  - #define LMIC_DEBUG_LEVEL 2
-  - #define LMIC_FAILURE_TO Serial
+    - #define LMIC_DEBUG_LEVEL 2
+    - #define LMIC_FAILURE_TO Serial
   - Uncomment line: #define DISABLE_PING
     Disable this feature. It is not needed and space is freed up.
   - Uncomment line: #define DISABLE_BEACONS
     Disable this feature. It is not needed and space is freed up.
+
+Edit the TTN keys in atmega328-sensor.ino.
 
 ## Installation
 
