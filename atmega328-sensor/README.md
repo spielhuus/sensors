@@ -15,6 +15,28 @@ Sketch for an Atmega328 and BME280
 | DIO1 |	PD3 (5) |   | 	MISO |	PB4 (18) |
 | DIO2 |	- 	  |   | 	GND |	- |
 
+## Prepare the Arduino IDE
+
+I asume the arduino IDE is already installed. 
+
+Add the Libraries to you IDE:
+
+- Within the IDE Libarary Manager Install the BME280 Library by Tyler Glenn.
+- Install the lmic library as ZIP file.
+ - Download the arduino-lmic library as zip file from: https://github.com/matthijskooijman/arduino-lmic
+ - Install the arduino-lmic-master.zip in the Arduino IDE:
+    Select menu: Sketch | Include Library | Add .Zip Library 
+- Make the following changes:
+ - If you live in Europe, set: #define CFG_eu868 1
+ - If you use a HopeRF RFM95 module, set: #define CFG_sx1276_radio 1
+ - If you want logging in the serial monitor, set:
+ - #define LMIC_DEBUG_LEVEL 2
+ - #define LMIC_FAILURE_TO Serial
+ - Uncomment line: #define DISABLE_PING
+   Disable this feature. It is not needed and space is freed up.
+ - Uncomment line: #define DISABLE_BEACONS
+   Disable this feature. It is not needed and space is freed up.
+
 ## Installation
 
 Add the keys from TTN in the arduino sketch file and change the PIN-Mappings:
