@@ -4,6 +4,17 @@ In this Project some IoT Sensors and actors are created. The goal is it to build
 
 Various IoT Sensors using Wi-Fi or Lora.
 
+# Sensor Projects
+
+## Attiny/LoraWan Temperature and CO2 Sensor 
+
+## Attmega328 Multi Sensor Board
+
+The Atmega 328 Board has connector to different sesnsors. The collected data is uloaded to the things network.
+
+Sensors
+- BME280
+- 
 
 # Datasheets
 
