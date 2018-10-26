@@ -14,4 +14,4 @@ Various IoT Sensors using Wi-Fi or Lora.
 
 
 
-[https://licensebuttons.net/l/by-sa/3.0/88x31.png](https://licensebuttons.net/l/by-sa/3.0/88x31.png)
+[![CC BY-SA](https://licensebuttons.net/l/by-sa/3.0/88x31.png)](https://licensebuttons.net/l/by-sa/3.0/88x31.png)
