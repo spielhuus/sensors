@@ -7,7 +7,7 @@ Various IoT Sensors using Wi-Fi or Lora.
 
 # Datasheets
 
-- [AVR Microcontroller Hardware Design Considerations](docs/)
+- [AVR Microcontroller Hardware Design Considerations](https://www.microchip.com/wwwAppNotes/AppNotes.aspx?appnote=en591472)
 
 ----
 
