@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:greenhouse_atmega328-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -379,4 +380,37 @@ Text Label 6900 1300 2    50   ~ 0
 RXD
 Text Label 6900 1400 2    50   ~ 0
 RTS#
+$Comp
+L RF_Module:ESP-12E U?
+U 1 1 5BD438DA
+P 3600 5800
+F 0 "U?" H 3600 6778 50  0000 C CNN
+F 1 "ESP-12E" H 3600 6687 50  0000 C CNN
+F 2 "RF_Module:ESP-12E" H 3600 5800 50  0001 C CNN
+F 3 "http://wiki.ai-thinker.com/_media/esp8266/esp8266_series_modules_user_manual_v1.1.pdf" H 3250 5900 50  0001 C CNN
+	1    3600 5800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Sensor_Temperature:DS18B20 U?
+U 1 1 5BD43976
+P 1250 5100
+F 0 "U?" H 1020 5146 50  0000 R CNN
+F 1 "DS18B20" H 1020 5055 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 250 4850 50  0001 C CNN
+F 3 "http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf" H 1100 5350 50  0001 C CNN
+	1    1250 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 5BD43D12
+P 2100 5050
+F 0 "J?" H 2180 5092 50  0000 L CNN
+F 1 "Conn_01x03" H 2180 5001 50  0000 L CNN
+F 2 "" H 2100 5050 50  0001 C CNN
+F 3 "~" H 2100 5050 50  0001 C CNN
+	1    2100 5050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

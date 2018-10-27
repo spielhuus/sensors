@@ -5,7 +5,7 @@
 This project is used to control and measure a hydrophonic greenhouse setup. the base of the hydrophonic setup is the bato nucket system.
 There is a 100l water tank 
 
-Features
+## Features
 
 - air temperature and humidity
 - water temperature, ph and ec
