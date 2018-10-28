@@ -145,7 +145,7 @@ void do_send(osjob_t* j){
 
         printBME280Data(&Serial);
         
-        LMIC_setTxData2(1, sensor_data, 8 /*sizeof(sensor_data)-1*/, 0);
+        LMIC_setTxData2(1, sensor_data, 10 /*sizeof(sensor_data)-1*/, 0);
         Serial.println(F("Packet queued"));
     }
     // Next TX is scheduled after TX_COMPLETE event.
@@ -263,6 +263,31 @@ void floatToByte(uint8_t* arr, float value) {
      arr[3] = l >> 24;
 }
 
+int get_cpu_temperature() {
+
+  unsigned int wADC;
+
+  // Set the internal reference and mux.
+  ADMUX = (_BV(REFS1) | _BV(REFS0) | _BV(MUX3));
+  ADCSRA |= _BV(ADEN);  // enable the ADC
+
+  delay(20);            // wait for voltages to become stable.
+
+  ADCSRA |= _BV(ADSC);  // Start the ADC
+
+  // Detect end-of-conversion
+  while (bit_is_set(ADCSRA,ADSC));
+
+  // Reading register "ADCW" takes care of how to read ADCL and ADCH.
+  wADC = ADCW;
+
+  // The offset of 324.31 could be wrong. It is just an indication.
+  // t = (wADC - 324.31 ) / 1.22;
+
+  // The returned temperature is in degrees Celsius.
+  return (wADC);
+}
+
 void printBME280Data(Stream* client) {
    float temp(NAN), hum(NAN), pres(NAN);
 
@@ -284,6 +309,10 @@ void printBME280Data(Stream* client) {
   sensor_data[5] = (byte) ((_pres & 0x00FF0000) >> 16 );
   sensor_data[6] = (byte) ((_pres & 0x0000FF00) >> 8  );
   sensor_data[7] = (byte) ((_pres & 0X000000FF)       );
+
+  int _cpu_temp = get_cpu_temperature();
+  sensor_data[8] = (byte) ((_cpu_temp & 0x0000FF00) >> 8  );
+  sensor_data[9] = (byte) ((_cpu_temp & 0X000000FF)       );
 
    client->print("Temp: ");
    client->print(temp);
