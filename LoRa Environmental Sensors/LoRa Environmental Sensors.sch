@@ -325,7 +325,7 @@ $EndComp
 Text Label 3150 4400 0    50   ~ 0
 MOSI
 Text Label 3150 4000 0    50   ~ 0
-MOSI
+MISO
 NoConn ~ 8800 4600
 $Comp
 L Device:R R2
